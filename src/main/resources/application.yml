@@ -8,7 +8,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: ${DB_DDL_AUTO:create}
+      ddl-auto: ${DB_DDL_AUTO:update}
     defer-datasource-initialization: true
     open-in-view: false
     show-sql: ${DB_SHOW_SQL:true}
