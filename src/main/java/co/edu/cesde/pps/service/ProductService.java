@@ -62,12 +62,12 @@ public class ProductService {
         product.setSku(productDTO.getSku());
         product.setName(productDTO.getName());
         product.setDescription(productDTO.getDescription());
+        product.setImage(productDTO.getImage());
         product.setPrice(productDTO.getPrice());
         product.setStockQty(productDTO.getStockQty());
         product.setIsActive(productDTO.getIsActive());
 
-        if (productDTO.getCategoryId() != null &&
-            !productDTO.getCategoryId().equals(product.getCategory().getCategoryId())) {
+        if (productDTO.getCategoryId() != null) {
             Category newCategory = categoryService.findCategoryEntityOrThrow(productDTO.getCategoryId());
             product.setCategory(newCategory);
         }
